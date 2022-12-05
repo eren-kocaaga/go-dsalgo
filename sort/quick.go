@@ -9,6 +9,8 @@ that are much simpler to solve (conquer). In this case, an unsorted
 array is broken into sub-arrays that are partially sorted, until all
 elements in the list are in the right position, by which time our
 unsorted list will have become sorted.
+
+O(log n)
 */
 func QuickSort(array []int) []int {
 	if len(array) < 2 {

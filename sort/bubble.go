@@ -8,7 +8,7 @@ implementing a bubble sort algorithm. To sort a list of numbers such as
 [3, 2, 1], we need to swap the elements a maximum of twice. This is equal
 to the length of the list minus 1
 
-O(n*n)
+O(n^2)
 */
 func BubbleSort(items []int) []int {
 	size := len(items)
