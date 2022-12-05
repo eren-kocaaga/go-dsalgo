@@ -12,7 +12,7 @@ better than Bubble Sort.
 Although it works better than Bubble Sort on average, worst-case remains
 O(n^2)
 */
-func CombSort(items []int) {
+func CombSort(items []int) []int {
 	var (
 		n       = len(items)
 		gap     = len(items)
@@ -33,4 +33,6 @@ func CombSort(items []int) {
 			}
 		}
 	}
+
+	return items
 }

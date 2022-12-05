@@ -22,10 +22,10 @@ n: is the number of keys
 w: is the key length
 O(nw)
 */
-func RadixSort(data []int32) {
+func RadixSort(items []int) []int {
 	buf := bytes.NewBuffer(nil)
-	ds := make([][]byte, len(data))
-	for i, e := range data {
+	ds := make([][]byte, len(items))
+	for i, e := range items {
 		binary.Write(buf, binary.LittleEndian, e^maxbit)
 		b := make([]byte, digit)
 		buf.Read(b)
@@ -47,6 +47,8 @@ func RadixSort(data []int32) {
 	for i, b := range ds {
 		buf.Write(b)
 		binary.Read(buf, binary.LittleEndian, &w)
-		data[i] = w ^ maxbit
+		items[i] = int(w ^ maxbit)
 	}
+
+	return items
 }

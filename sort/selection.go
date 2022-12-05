@@ -10,7 +10,7 @@ until the list becomes sorted.
 
 O(n^2)
 */
-func SelectionSort(items []int) {
+func SelectionSort(items []int) []int {
 	var n = len(items)
 	for i := 0; i < n; i++ {
 		var minIdx = i
@@ -21,4 +21,6 @@ func SelectionSort(items []int) {
 		}
 		items[i], items[minIdx] = items[minIdx], items[i]
 	}
+
+	return items
 }

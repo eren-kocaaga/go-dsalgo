@@ -9,7 +9,7 @@ if all sub-lists of every N'th element is sorted.
 
 O(n^2)
 */
-func ShellSort(items []int) {
+func ShellSort(items []int) []int {
 	var (
 		n    = len(items)
 		gaps = []int{1}
@@ -36,6 +36,8 @@ func ShellSort(items []int) {
 			}
 		}
 	}
+
+	return items
 }
 
 func element(a, b int) int {

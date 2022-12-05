@@ -12,28 +12,28 @@ unsorted list will have become sorted.
 
 O(log n)
 */
-func QuickSort(array []int) []int {
-	if len(array) < 2 {
-		return array
+func QuickSort(items []int) []int {
+	if len(items) < 2 {
+		return items
 	}
 
-	left, right := 0, len(array)-1
+	left, right := 0, len(items)-1
 
-	pivot := rand.Int() % len(array)
+	pivot := rand.Int() % len(items)
 
-	array[pivot], array[right] = array[right], array[pivot]
+	items[pivot], items[right] = items[right], items[pivot]
 
-	for i, _ := range array {
-		if array[i] < array[right] {
-			array[left], array[i] = array[i], array[left]
+	for i, _ := range items {
+		if items[i] < items[right] {
+			items[left], items[i] = items[i], items[left]
 			left++
 		}
 	}
 
-	array[left], array[right] = array[right], array[left]
+	items[left], items[right] = items[right], items[left]
 
-	QuickSort(array[:left])
-	QuickSort(array[left+1:])
+	QuickSort(items[:left])
+	QuickSort(items[left+1:])
 
-	return array
+	return items
 }

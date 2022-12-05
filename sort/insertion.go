@@ -10,7 +10,7 @@ package sort
 // remains sorted./*
 //
 // O(n²)
-func InsertionSort(items []int) {
+func InsertionSort(items []int) []int {
 	var n = len(items)
 	for i := 1; i < n; i++ {
 		j := i
@@ -21,4 +21,6 @@ func InsertionSort(items []int) {
 			j = j - 1
 		}
 	}
+
+	return items
 }
